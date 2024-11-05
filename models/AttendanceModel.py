@@ -14,8 +14,8 @@ class Attendance(db.Model):
         return {
             "id": str(self.id),
             "user_id": str(self.user_id),
-            "date": self.date,
-            "check_in_time": self.check_in_time,
-            "check_out_time": self.check_out_time,
+            "date": self.date.isoformat(),
+            "check_in_time": str(self.check_in_time),
+            "check_out_time": str(self.check_out_time)if self.check_out_time else None,
             "status": self.status
         }

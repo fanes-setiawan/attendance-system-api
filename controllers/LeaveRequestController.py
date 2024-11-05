@@ -22,7 +22,8 @@ def add_leave_request():
     return jsonify({"message": "Leave request added successfully"}), 201
 
 def delete_leave_request(leave_id):
-    leave_request = LeaveRequest.query.get(leave_id)
+    print(f"Received leave_id: {leave_id}")  #
+    leave_request = LeaveRequest.query.get(str(leave_id))
     if not leave_request:
         return jsonify({"error": "Leave request not found"}), 404
 
