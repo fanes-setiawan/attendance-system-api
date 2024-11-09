@@ -10,5 +10,3 @@ app.register_blueprint(leave_request_bp)
 app.register_blueprint(attendance_history_bp)
 
 db.create_all()
-
-# Jangan tambahkan app.run() di sini
