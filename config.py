@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://admin123:3edc2wsx@localhost/attendance'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://attendanceDB_upwardate:815da069d6094be1f50757a78ad5301fe23a800e@zvbxl.h.filess.io/attendanceDB_upwardate'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
