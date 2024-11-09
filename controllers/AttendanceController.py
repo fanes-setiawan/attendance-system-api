@@ -2,10 +2,18 @@ from flask import jsonify, request
 from models.AttendanceModel import Attendance
 from config import db
 
-def get_attendance():
+def get_attendances():
     attendance_records = Attendance.query.all()
     result = [record.to_dict() for record in attendance_records]
     return jsonify({"status": "success", "data": result}), 200
+
+def get_attendance(attendance_id):
+    attendance = Attendance.query.get(str(attendance_id))
+    if attendance:
+        result = attendance.to_dict()
+        return jsonify({"status": "success", "data": result}), 200
+    else:
+        return jsonify({"status": "error", "message": "Attendance record not found"}), 404
 
 def add_attendance():
     data = request.get_json()

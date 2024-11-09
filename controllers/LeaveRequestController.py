@@ -7,6 +7,14 @@ def get_leave_requests():
     result = [leave.to_dict() for leave in leave_requests]
     return jsonify({"status": "success", "data": result}), 200
 
+def get_leave_request(leave_id):
+    leave_request = LeaveRequest.query.get(str(leave_id))
+    if leave_request:
+        result = leave_request.to_dict()
+        return jsonify({"status": "success", "data": result}), 200
+    else:
+        return jsonify({"status": "error", "message": "Leave request not found"}), 404
+
 def add_leave_request():
     data = request.get_json()
     new_leave_request = LeaveRequest(
