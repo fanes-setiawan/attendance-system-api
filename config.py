@@ -9,6 +9,6 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def home():
-    return "21.83.0627 \n Fanes Setiawan"
+    return "21.83.0627 Fanes Setiawan"
 
 app.app_context().push()
