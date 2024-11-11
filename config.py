@@ -1,5 +1,6 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+import os
+from flask import Flask # type: ignore
+from flask_sqlalchemy import SQLAlchemy # type: ignore
 
 app = Flask(__name__)
 
