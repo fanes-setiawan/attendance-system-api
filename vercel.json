@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "PYTHON_RUNTIME": "3.12"
+    }
+  }
+}
